@@ -1,0 +1,126 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.parallax {
+    height: 100%;
+    background: url(media/homepage_background.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+    /* parallax image effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+span {
+    font-family: 'Euphoria Script';
+    animation: smoky 5s;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 200px;
+    text-align: center;
+
+    color: #B213FD;
+
+    text-shadow: 4px 8px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0 whitesmoke;
+}
+
+span:nth-child(even){
+  animation-name: smoky-mirror;
+}
+
+.smoke_effect {
+    animation: smoky 5s 3s both;
+}
+
+@keyframes smoky {
+    60% {
+        text-shadow: 0 0 40px whitesmoke;
+    }
+    to {
+        transform:
+            translate3d(15rem,-8rem,0)
+            rotate(-40deg)
+            skewX(70deg)
+            scale(1.5);
+        text-shadow: 0 0 20px whitesmoke;
+        opacity: 0;
+    }
+}
+
+@keyframes smoky-mirror {
+  60% {
+    text-shadow: 0 0 40px whitesmoke; }
+  to {
+    transform:
+      translate3d(18rem,-8rem,0)
+      rotate(-40deg) 
+      skewX(-70deg)
+      scale(2);
+     text-shadow: 0 0 20px whitesmoke;
+    opacity: 0;
+  }
+}
+
+@for $item from 1 through 21 {
+    span:nth-of-type(#{$item}){ 
+        animation-delay: #{(3 + ($item/10))}s; 
+    }
+} 
+
+#title, h1 {
+    display: inline;
+
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar {
+    background: rgba(28, 77, 4, 0.65);
+    backdrop-filter: blur(7.5px);
+    overflow: hidden;
+    top: 0; width: 100%; position: fixed; /* sticky navbar */
+}
+
+#nav_title {
+    font-family: 'Euphoria Script';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+
+    overflow: hidden;
+
+    color: #B213FD;
+}
+
+.navbar a {
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
