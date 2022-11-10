@@ -4,7 +4,13 @@ html, body{
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    position: fixed;
 }
+
+body {
+    padding-top: 87px;
+}
+
 
 .parallax {
     height: 100%;
@@ -75,3 +81,16 @@ html, body{
   color: black;
 }
 
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 100%; width: 100%;
+    margin: auto;
+}
+
+.gallery_item{
+    height: 400px; width: 350px;
+    background-color: green;
+}
