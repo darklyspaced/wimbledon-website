@@ -4,11 +4,13 @@ html, body{
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    scrollbar-width: none;
     position: fixed;
+    background-color:rgb(228, 228, 228);
 }
 
-body {
-    padding-top: 87px;
+body::webkit-scrollbar {
+    display: none;
 }
 
 
@@ -93,4 +95,17 @@ body {
 .gallery_item{
     height: 400px; width: 350px;
     background-color: green;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateX(-100%);
+    transition: all 0.75s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
 }
