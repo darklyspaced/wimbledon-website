@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/darklyspaced/wimbledon-website/issues"
   },
-  "homepage": "https://github.com/darklyspaced/wimbledon-website#readme"
+  "homepage": "https://github.com/darklyspaced/wimbledon-website#readme",
+  "dependencies": {
+    "tilt.js": "^1.2.1"
+  }
 }
