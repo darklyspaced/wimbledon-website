@@ -176,12 +176,28 @@ body::webkit-scrollbar {
     transform: scale(1.05);
 }
 
+.static_carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    background-color: whitesmoke;
+}
+
+.static_carousel_item {
+    height: 300px; width: 300px;
+    background-color: red;
+    overflow: hidden;
+    transition: all ease-in-out 500ms;
+    margin: 50px 0px 50px 0px;
+}
+
 .gallery{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
+    justify-content: space-evenly;
+    align-content: space-evenly;
 }
 
 .gallery_item {
@@ -241,6 +257,13 @@ body::webkit-scrollbar {
 
 #fox {
     background-image: url("media/fox_background.jpg");
+    filter: blur(7.5px);
     background-size:cover;
     position: absolute;
+}
+
+#fox_1 {
+    background-image: url("media/fox_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
