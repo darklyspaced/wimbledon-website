@@ -7,47 +7,10 @@ html, body{
     scrollbar-width: none;
     position: fixed;
     background-color:rgb(228, 228, 228);
-    
 }
 
 body::webkit-scrollbar {
     display: none;
-}
-
-.parallax {
-    width: 100%;
-    height: 100%;
-    background: url(media/homepage_background.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-
-    /* parallax image effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.parallax .blur {
-    width: 100%;
-    height: 100%;
-    background: url(media/homepage_background.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-
-    /* parallax image effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-  	-moz-filter: blur(10px);
-  	-o-filter: blur(10px);
-  	-ms-filter: blur(10px);
 }
 
 #title, h1 {
@@ -62,6 +25,14 @@ body::webkit-scrollbar {
     color: #B213FD;
 
     text-shadow: 4px 8px 6px rgba(0, 0, 0, 0.5);
+}
+
+.parallax {
+    background-image: url(media/homepage_background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #title {
@@ -111,6 +82,8 @@ body::webkit-scrollbar {
 }
 
 .below_homepage {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,16 +91,89 @@ body::webkit-scrollbar {
 }
 
 .homepage_container {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
 }
 
 .static_carousel {
+    order: 2;
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
+}
+
+.right_block {
+    order: 2;
+    height: 100%;
+    width: 40%;
+}
+
+.left_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 1;
+    width: 60%;
+    height: 100%
+}
+
+
+.l_r_container{
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 400px; 
+    background-color: whitesmoke;
+    align-items: start;
+}
+
+.section_title h2 {
+    margin: 0px 0px 0px 6%;
+    font-size: 60px;
+    color: #B213FD;
+    font-family: 'Libre Baskerville';
+}
+
+.section_title{
+    display: inline;
+    order: 1;
+    height: auto;
+    vertical-align:top;
+    width: 100%;
+}
+
+.section_info {
+    order: 2;
+}
+
+.section_info p {
+    margin: 0px 0px 0px 6%;
+    text-align: justify;
+    text-justify: inter-character;
+    font-size: 30px;
+}
+
+.section_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out 350ms;
+}
+
+.section_image img {
+    width: 65%;
+}
+
+.section_image:hover {
+    transform: scale(1.05);
 }
 
 .gallery{
@@ -157,7 +203,6 @@ body::webkit-scrollbar {
 
 .gallery_info {
     font-size: 13px;
-
 }
 
 .gallery_item:hover {
