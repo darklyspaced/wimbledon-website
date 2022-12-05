@@ -12,11 +12,6 @@ var lastScrollTop = $(window).scrollTop();
 
 $(window).on('scroll', function() { 
     var s = $(this).scrollTop();
-    var change = s = lastScrollTop;
     opacityVal = (s / 240);
-    $('.titles').css({
-        bottom: “-=” + change/4.5,
-        opacity: “-=” + change/700
-    });
     lastScrollTop = s;
 });

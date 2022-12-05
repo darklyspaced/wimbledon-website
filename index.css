@@ -52,6 +52,7 @@ body::webkit-scrollbar {
     background: rgba(28, 77, 4, 0.65);
     backdrop-filter: blur(7.5px);
     overflow: hidden;
+    z-index: 1000;
     top: 0; width: 100%; position: fixed; /* sticky navbar */
 }
 
@@ -98,18 +99,19 @@ body::webkit-scrollbar {
     flex-wrap: nowrap;
 }
 
-.static_carousel {
-    order: 2;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
-}
 
 .right_block {
     order: 2;
     height: 100%;
     width: 40%;
+}
+
+.right_block a {
+    position: absolute;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .left_block {
@@ -129,7 +131,6 @@ body::webkit-scrollbar {
     flex-wrap: nowrap;
     width: 100%;
     height: 400px; 
-    background-color: whitesmoke;
     align-items: start;
 }
 
@@ -161,15 +162,19 @@ body::webkit-scrollbar {
 
 .section_image {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     transition: all ease-in-out 350ms;
+    overflow: hidden;
 }
 
 .section_image img {
-    width: 65%;
+    position: absolute;
+    filter: brightness(80%);
+    width: 55%;
 }
 
 .section_image:hover {
@@ -178,18 +183,75 @@ body::webkit-scrollbar {
 
 .static_carousel {
     display: flex;
+    order: 2;
     flex-direction: row;
     justify-content: space-evenly;
     align-content: space-evenly;
-    background-color: whitesmoke;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.static_carousel a {
+    z-index: 3;
+    display: block;
+    position: absolute;
+    width: 100%; height: 100%;
 }
 
 .static_carousel_item {
     height: 300px; width: 300px;
-    background-color: red;
     overflow: hidden;
     transition: all ease-in-out 500ms;
     margin: 50px 0px 50px 0px;
+    box-shadow: /* https://shadows.brumm.af/ */
+        2.5px 2.3px 3.3px rgba(0, 0, 0, 0.036),
+        5.7px 5.4px 7.8px rgba(0, 0, 0, 0.052),
+        10.3px 9.7px 13.9px rgba(0, 0, 0, 0.064),
+        17px 16.1px 23.1px rgba(0, 0, 0, 0.076),
+        28px 26.5px 38.1px rgba(0, 0, 0, 0.088),
+        49px 46.2px 66.6px rgba(0, 0, 0, 0.104),
+        106px 100px 144px rgba(0, 0, 0, 0.14)
+        ;
+}
+
+.static_carousel_item:hover {
+    transform: scale(1.05);
+}
+
+.static_carousel_text {
+    position: absolute;
+    display: flex;
+    line-height: 100%;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 4px 8px 6px rgba(0, 0, 0, 0.7);
+}
+
+.static_carousel_text h2 {
+    font-family: 'Euphoria Script';
+    font-style: bold;
+    font-size: 40px;
+
+    text-align: center;
+    color: #B213FD;
+}
+
+.static_carousel_box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.static_carousel_image{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: blur(2px);
+    filter: brightness(50%);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .gallery{
@@ -257,13 +319,54 @@ body::webkit-scrollbar {
 
 #fox {
     background-image: url("media/fox_background.jpg");
-    filter: blur(7.5px);
     background-size:cover;
     position: absolute;
 }
 
 #fox_1 {
     background-image: url("media/fox_background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+
+#queens_1 {
+    background-image: url("media/queens_background.jpg");
+}
+
+#ivy_1 {
+    background-image: url("media/ivy_background.jpg");
+}
+
+#lawn_tennis_museum_1 {
+    background-image: url("media/lawn_tennis_museum.jpg");
+}
+
+#london_1 {
+    background-image: url("media/london.jpeg");
+}
+
+#manchester_1 {
+    background-image: url("media/manchester.jpg");
+}
+
+#hotel_du_vin_1 {
+    background-image: url("media/hotel_du_vin.jpg");
+}
+
+#fox_and_1 {
+    background-image: url("media/fox_and_the_grapes.jpg");
+}
+
+#premier_1 {
+    background-image: url("media/premier_inn.jpg");
+}
+
+#wimbledon_common_1 {
+    background-image: url("media/wimbledon_common.jpg");
+}
+
+#cannizaro_park_1 {
+    background-image: url("media/cannizaro_parkl.jpg");
+}
+
+#war_memorial_1 {
+    background-image: url("media/war_memorial.jpg");
 }
